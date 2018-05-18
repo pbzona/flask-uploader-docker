@@ -18,7 +18,7 @@ for bucket in s3.buckets.all():
     # Define a unique term to look for in your buckets
     # This is a string in the bucket name (not the entire name itself), and the
     # first result will be used as the bucket to upload to
-    if 'upload-photos' in bucket.name:
+    if 'uploadphotos' in bucket.name:
         bucket_name = bucket.name
 
 def put_in_S3(file, filename):
