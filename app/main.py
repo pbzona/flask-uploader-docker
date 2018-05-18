@@ -15,7 +15,10 @@ def allowed_file(filename):
 
 s3 = boto3.resource('s3')
 for bucket in s3.buckets.all():
-    if 'flask' in bucket.name:
+    # Define a unique term to look for in your buckets
+    # This is a string in the bucket name (not the entire name itself), and the
+    # first result will be used as the bucket to upload to
+    if 'upload-photos' in bucket.name:
         bucket_name = bucket.name
 
 def put_in_S3(file, filename):
